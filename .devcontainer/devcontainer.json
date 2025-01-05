@@ -1,0 +1,15 @@
+{
+    "name": "Java 21 Environment",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "vscjava.vscode-java-pack", // Java Extension Pack (includes IntelliSense, Debugging)
+        "redhat.java", // Red Hat's Java Language Support (for IntelliSense, code navigation)
+        "vscjava.vscode-maven", // Maven Support
+        "vscjava.vscode-java-dependency-viewer", // Dependency management
+        "vscjava.vscode-java-test", // Test Runner for Java
+        "ms-java.debugger-for-java" // Debugger for Java
+    ],
+    "settings": {
+        "java.home": "/usr/lib/jvm/java-21-openjdk"
+    }
+}
