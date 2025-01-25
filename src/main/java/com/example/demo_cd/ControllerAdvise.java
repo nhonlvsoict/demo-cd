@@ -9,7 +9,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * @return a response entity with the exception message and status code 500
      */
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception e, WebRequest request) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    public ResponseEntity<Object> handleException(Exception e, WebRequest request) {
+        ProblemDetails problemDetails = ProblemDetails.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        return createResponseEntity(problemDetails, null, HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 }
